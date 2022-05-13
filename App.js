@@ -18,9 +18,9 @@ function App() {
       // }}
       >
         {/* To hide Header from splash only */}
-        <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen options={{ headerShown: false, }} name="Splash" component={Splash} />
         {/* To hide back in home  && mack it center*/}
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
