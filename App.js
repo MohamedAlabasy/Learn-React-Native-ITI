@@ -9,6 +9,9 @@ import SingleNews from './Screens/SingleNews';
 import Onboard from './Screens/Onboard';
 import Login from './Screens/Login';
 import SingUp from './Screens/SignUp';
+import Google from './Screens/Google';
+import About from './Screens/About';
+import FooterComponents from './Components/FooterComponents';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { TouchableOpacity, Image } from 'react-native'
 
@@ -29,7 +32,9 @@ function App() {
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
-                alert('hel')
+                alert()
+                navigation.navigate('Google')
+                // navigation.navigate('Google');
               }}
             >
               <Icon
@@ -66,6 +71,9 @@ function App() {
         {/* To hide back in home  && mack it center*/}
         <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="Home" component={Home} />
         <Stack.Screen options={{ headerTitleAlign: 'center' }} name="SingleNews" component={SingleNews} />
+        <Stack.Screen options={{ headerTitleAlign: 'center', headerShown: false, headerBackVisible: false }} name="Google" component={Google} />
+        <Stack.Screen options={{ headerTitleAlign: 'center' }} name="FooterComponents" component={FooterComponents} />
+        <Stack.Screen options={{ headerTitleAlign: 'center' }} name="About" component={About} />
       </Stack.Navigator >
     </NavigationContainer >
   );

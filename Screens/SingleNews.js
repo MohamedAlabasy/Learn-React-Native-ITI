@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, Text, StyleSheet, Image } from 'react-native'
+import { ScrollView, View, Text, StyleSheet, Image, StatusBar } from 'react-native'
 import AppStatusBarComponents from '../Components/AppStatusBarComponents';
 
 export default function SingleNews({ navigation, route }) {
@@ -7,6 +7,7 @@ export default function SingleNews({ navigation, route }) {
 
     return (
         <ScrollView>
+            <StatusBar backgroundColor={'#3b5998'} barStyle="light-content" />
             <AppStatusBarComponents />
             <View View style={style.mainContainer} >
                 <Image

@@ -40,6 +40,7 @@ export default class Home extends React.Component {
                 this.state.news.map((news, i) => {
                     return (
                         <TouchableOpacity
+                            key={i}
                             style={style.mainContainer}
                             onPress={() => {
                                 this.props.navigation.navigate("SingleNews", { image: news.better_featured_image.source_url, title: news.title.rendered, desc: news.excerpt.rendered });

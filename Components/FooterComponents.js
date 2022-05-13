@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+
 export default class FooterComponents extends React.Component {
 
 
@@ -10,7 +11,7 @@ export default class FooterComponents extends React.Component {
             <View style={style.container}>
                 <TouchableOpacity
                     onPress={() => {
-                        alert('hel')
+                        this.props.navigation.navigate("Google")
                     }}
                 >
                     <Image
@@ -28,8 +29,8 @@ export default class FooterComponents extends React.Component {
                         color='#fff'
                         size={30}
                         style={{
-                            marginEnd: 30,
-                            marginStart: 30
+                            marginEnd: 40,
+                            marginStart: 40
                         }}
                     />
                 </TouchableOpacity>
@@ -59,5 +60,7 @@ const style = StyleSheet.create({
         backgroundColor: '#4a5cD0',
         width: '100%',
         height: 50,
+        borderTopLeftRadius: 25,
+        borderTopRightRadius: 25,
     },
 })
