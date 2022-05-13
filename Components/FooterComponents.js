@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Image, StyleSheet, TouchableOpacity, Linking } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -21,7 +21,8 @@ export default class FooterComponents extends React.Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
-                        alert('hel')
+                        Linking.openURL('whatsapp://send?text=hello this is Mohamed Alabasy From React Native App &phone=+201013066560');
+
                     }}
                 >
                     <Icon
