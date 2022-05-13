@@ -1,35 +1,67 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, StatusBar, ActivityIndicator } from 'react-native'
-import { Card } from 'react-native-paper';
+// import auth from '@react-native-firebase/auth';
 export default class Home extends React.Component {
 
-    state = {
+    state = { news: [], resReady: 0 }
+
+    componentDidMount() {
+        fetch('https://egyptian-antiquities.com/en/wp-json/wp/v2/posts?per_page=5')
+            .then((r) =>
+                r.json()
+            ).then((res) => {
+                this.setState({ news: res, resReady: 1 })
+            })
 
     }
     render() {
         return (
             <ScrollView style={{ paddingBottom: 5, paddingTop: 5 }}>
-                <StatusBar backgroundColor={'#fff'} barStyle="dark-content" />
-                <TouchableOpacity
-                    style={style.mainContainer}
-                    onPress={() => {
-                        this.props.navigation.navigate("SingleNews");
-                    }}
-                >
-                    <View>
-                        <Image
-                            style={style.image} source={{ uri: 'https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg' }}
-                        />
-                    </View>
-                    <View style={style.TextContainer}>
-                        <Text style={style.title}>What is Lorem Ipsum?</Text>
-                        <Text style={style.description}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
-                    </View>
-                </TouchableOpacity>
+                {/* <Button title="logout"
+                    onPress={() => auth().signOut()} /> */}
+                {this.renderNews()}
             </ScrollView>
         )
     }
+
+    renderNews() {
+        if (this.state.resReady === 1) {
+            return (
+                this.state.news.map((news, i) => {
+                    return (
+                        <TouchableOpacity
+                            style={style.mainContainer}
+                            onPress={() => {
+                                this.props.navigation.navigate("SingleNews", { image: news.better_featured_image.source_url, title: news.title.rendered, desc: news.excerpt.rendered });
+                            }}
+                        >
+                            <View>
+                                <Image
+                                    style={style.image} source={{ uri: news.better_featured_image.source_url }}
+                                />
+                            </View>
+                            <View style={style.TextContainer}>
+                                <Text style={style.title}>{news.title.rendered.substring(0, 20)}</Text>
+                                <Text style={style.description}>{news.excerpt.rendered.substring(0, 200)}</Text>
+                            </View>
+                        </TouchableOpacity>
+                    )
+                }))
+        } else {
+            return (
+                <ActivityIndicator size="large" />
+            )
+        }
+    }
 }
+
+//     render() {
+//         return (
+//                 <StatusBar backgroundColor={'#fff'} barStyle="dark-content" />
+//                 
+//         )
+//     }
+// }
 
 const style = StyleSheet.create({
     mainContainer: {
