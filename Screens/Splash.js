@@ -1,14 +1,22 @@
 import React from 'react';
 import { View, Image, StyleSheet, ActivityIndicator, ActivityIndicatorProps } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default class Splash extends React.Component {
 
     goToHomeScreen() {
-        setTimeout(() => {
-            // To prevent back to splash again
-            // this.props.navigation.replace("Home");
-            this.props.navigation.replace("Onboard");
-        }, 5000);
+        AsyncStorage.getItem('isFirstTime').then((res) => {
+            setTimeout(() => {
+                // To prevent back to splash again
+                // this.props.navigation.replace("Home");
+                // this.props.navigation.replace("Onboard");
+                if (res) {
+                    this.props.navigation.replace("Home");
+                } else {
+                    this.props.navigation.replace("Onboard");
+                }
+            }, 3000);
+        })
     }
     render() {
         return (

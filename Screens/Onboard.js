@@ -1,11 +1,12 @@
 import React from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
 import { StyleSheet, Image } from 'react-native'
-import AppStatusBarComponents from '../Components/AppStatusBarComponents';
+// import AppStatusBarComponents from '../Components/AppStatusBarComponents';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default class Onboard extends React.Component {
-    state = {
-
+    componentDidMount() {
+        AsyncStorage.setItem('isFirstTime', 'yes')
     }
     render() {
         return (

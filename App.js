@@ -23,8 +23,8 @@ function App() {
 
       >
         {/* To hide Header from splash only */}
-        {/* <Stack.Screen options={{ headerShown: false, statusBarHidden: true }} name="Splash" component={Splash} /> */}
-        {/* <Stack.Screen options={{ headerShown: false, }} name="Onboard" component={Onboard} /> */}
+        <Stack.Screen options={{ headerShown: false, statusBarHidden: true }} name="Splash" component={Splash} />
+        <Stack.Screen options={{ headerShown: false, }} name="Onboard" component={Onboard} />
 
         <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="Login" component={Login} />
         {/* <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="SignUp" component={SingUp} /> */}
