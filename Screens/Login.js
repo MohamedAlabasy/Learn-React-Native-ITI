@@ -39,14 +39,16 @@ export default function Login() {
                     <Text style={style.text}>Login</Text>
                 </TouchableOpacity>
 
-                {/* <TouchableOpacity
-                    // onPress={() => {
-                        //     this.props.navigation.navigate("SingUp");
-                        // }}
-                        style={style.btn}
-                        >
-                        <Text style={style.text}>Sing Up</Text>
-                    </TouchableOpacity> */}
+                <View style={{ flexDirection: 'row', marginTop: 10 }}>
+                    <Text>Dan't have an Account  </Text>
+                    <TouchableOpacity
+                        onPress={() => {
+                            this.props.navigation.navigate("SingUp");
+                        }}
+                    >
+                        <Text style={{ color: '#4a5cD0', fontWeight: 'bold' }}>Sing Up</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     )

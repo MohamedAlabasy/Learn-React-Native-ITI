@@ -66,7 +66,7 @@ function App() {
         <Stack.Screen options={{ headerShown: false, }} name="Onboard" component={Onboard} />
 
         <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="Login" component={Login} />
-        {/* <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="SignUp" component={SingUp} /> */}
+        <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="SignUp" component={SingUp} />
 
         {/* To hide back in home  && mack it center*/}
         <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="Home" component={Home} />
