@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, StatusBar } from 'react-native'
 import { Card } from 'react-native-paper';
 
 export default class Home extends React.Component {
@@ -9,6 +9,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <ScrollView style={{ paddingBottom: 5, paddingTop: 5 }}>
+                <StatusBar backgroundColor={'#fff'} barStyle="dark-content" />
                 <TouchableOpacity
                     style={style.mainContainer}
                     onPress={() => {
@@ -29,6 +30,7 @@ export default class Home extends React.Component {
         )
     }
 }
+// const BAR_HEIGHT = StatusBar.currentHeight;
 
 const style = StyleSheet.create({
     mainContainer: {

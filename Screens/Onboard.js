@@ -1,6 +1,7 @@
 import React from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
 import { StyleSheet, Image } from 'react-native'
+import AppStatusBar from '../Components/AppStatusBar ';
 
 export default class Onboard extends React.Component {
     state = {
@@ -15,22 +16,22 @@ export default class Onboard extends React.Component {
                 pages={[
                     {
                         backgroundColor: '#fff',
-                        image: <Image style={style.image} source={{ uri: 'https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg' }} />,
+                        image: <Image style={style.image} source={require('../assets/onboard1.png')} />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
                     },
                     {
                         backgroundColor: '#fff',
-                        image: <Image style={style.image} source={{ uri: 'https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg' }} />,
+                        image: <Image style={style.image} source={require('../assets/onboard2.png')} />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
                     },
                     {
                         backgroundColor: '#fff',
-                        image: <Image style={style.image} source={{ uri: 'https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg' }} />,
+                        image: <Image style={style.image} source={require('../assets/onboard3.png')} />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
-                    },
+                    }
                 ]}
             />
         )
@@ -41,7 +42,7 @@ const style = StyleSheet.create({
 
     image: {
         width: '80%',
-        height: 300,
+        height: 250,
         borderRadius: 25
     }
 })

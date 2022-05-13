@@ -21,7 +21,7 @@ function App() {
       // }}
       >
         {/* To hide Header from splash only */}
-        <Stack.Screen options={{ headerShown: false, }} name="Splash" component={Splash} />
+        <Stack.Screen options={{ headerShown: false, statusBarHidden: true }} name="Splash" component={Splash} />
         <Stack.Screen options={{ headerShown: false, }} name="Onboard" component={Onboard} />
 
         {/* To hide back in home  && mack it center*/}

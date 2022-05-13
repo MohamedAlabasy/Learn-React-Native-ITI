@@ -13,6 +13,7 @@ export default class Splash extends React.Component {
     render() {
         return (
             <View style={style.container}>
+                <StatusBar backgroundColor={'#000'} barStyle="dark-content" />
                 {/* to control in Control StatusBar */}
                 <StatusBar barStyle="dark-content" backgroundColor={'transparent'} translucent={true} />
                 <Image style={style.splashIcon} source={{ uri: 'https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg' }}
