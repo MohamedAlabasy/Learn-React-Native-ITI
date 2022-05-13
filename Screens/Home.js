@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, StatusBar 
 import { Card } from 'react-native-paper';
 
 export default class Home extends React.Component {
+
     state = {
 
     }

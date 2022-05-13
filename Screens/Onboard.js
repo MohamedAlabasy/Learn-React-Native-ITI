@@ -10,11 +10,13 @@ export default class Onboard extends React.Component {
     render() {
         return (
             <Onboarding
-                onSkip={() => {
-                    this.props.navigation.replace("Home");
-                }}
+                onSkip={() => this.goToHomeScreen()}
+                onDone={() => this.goToHomeScreen()}
+                bottomBarColor={'#fff'}
+                controlStatusBar={false}
                 pages={[
                     {
+                        bottomBarHeight: 80,
                         backgroundColor: '#fff',
                         image: <Image style={style.image} source={require('../assets/onboard1.png')} />,
                         title: 'Onboarding',
@@ -36,12 +38,14 @@ export default class Onboard extends React.Component {
             />
         )
     }
+    goToHomeScreen() {
+        this.props.navigation.replace("Login");
+    }
 }
 
 const style = StyleSheet.create({
-
     image: {
-        width: '80%',
+        width: 250,
         height: 250,
         borderRadius: 25
     }

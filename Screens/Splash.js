@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet, ActivityIndicator, StatusBar } from 'react-native'
+import { View, Image, StyleSheet, ActivityIndicator, ActivityIndicatorProps } from 'react-native'
 
 export default class Splash extends React.Component {
 
@@ -13,17 +13,16 @@ export default class Splash extends React.Component {
     render() {
         return (
             <View style={style.container}>
-                <StatusBar backgroundColor={'#000'} barStyle="dark-content" />
                 {/* to control in Control StatusBar */}
-                <StatusBar barStyle="dark-content" backgroundColor={'transparent'} translucent={true} />
-                <Image style={style.splashIcon} source={{ uri: 'https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg' }}
+                <Image
+                    style={style.splashIcon}
+                    source={require('../assets/splash.png')}
                 />
-                <ActivityIndicator size={'large'} color={'#fff'} />
+                <ActivityIndicator size="large" color="#0000ff" />
                 {this.goToHomeScreen()}
             </View>
         )
     }
-
 }
 
 
@@ -32,7 +31,7 @@ const style = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#000'
+        backgroundColor: '#fff'
     },
     splashIcon: {
         width: 250,
