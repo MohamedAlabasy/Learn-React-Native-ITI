@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Image, StyleSheet, ActivityIndicator, ActivityIndicatorProps } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
+
+
 export default class Splash extends React.Component {
 
     goToHomeScreen() {

@@ -1,6 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, StatusBar, ActivityIndicator } from 'react-native'
 // import auth from '@react-native-firebase/auth';
+import FooterComponents from '../Components/FooterComponents';
+
+
 export default class Home extends React.Component {
 
     state = { news: [], resReady: 0 }
@@ -16,11 +19,18 @@ export default class Home extends React.Component {
     }
     render() {
         return (
-            <ScrollView style={{ paddingBottom: 5, paddingTop: 5 }}>
-                {/* <Button title="logout"
+            <View>
+
+                <ScrollView style={{ paddingBottom: 5, paddingTop: 5, marginBottom: 50 }}>
+                    <StatusBar backgroundColor={'#3b5998'} barStyle="light-content" />
+                    {/* <Button title="logout"
                     onPress={() => auth().signOut()} /> */}
-                {this.renderNews()}
-            </ScrollView>
+                    {this.renderNews()}
+                </ScrollView >
+                <View style={style.btnContainer}>
+                    <FooterComponents />
+                </View>
+            </View>
         )
     }
 
@@ -49,19 +59,16 @@ export default class Home extends React.Component {
                 }))
         } else {
             return (
-                <ActivityIndicator size="large" />
+                //                 <StatusBar backgroundColor={'#fff'} barStyle="dark-content" />
+                <View style={{ justifyContent: 'center', alignItems: 'center', height: 600 }}>
+                    <ActivityIndicator size="large" color="#4a5cD0" />
+                </View>
             )
         }
     }
 }
 
-//     render() {
-//         return (
-//                 <StatusBar backgroundColor={'#fff'} barStyle="dark-content" />
-//                 
-//         )
-//     }
-// }
+
 
 const style = StyleSheet.create({
     mainContainer: {
@@ -92,5 +99,10 @@ const style = StyleSheet.create({
         overflow: 'hidden',
         width: 185,
         height: 150
-    }
+    },
+    btnContainer: {
+        width: '100%',
+        position: 'absolute',
+        bottom: 0,
+    },
 })
