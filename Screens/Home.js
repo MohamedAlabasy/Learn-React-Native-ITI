@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, StatusBar, ActivityIndicator } from 'react-native'
 import { Card } from 'react-native-paper';
-// import { Image } from "@rneui/themed";
 export default class Home extends React.Component {
 
     state = {
@@ -20,7 +19,6 @@ export default class Home extends React.Component {
                     <View>
                         <Image
                             style={style.image} source={{ uri: 'https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg' }}
-                        // PlaceholderContent={<ActivitysIndicator size="large" color="#0000ff" />}
                         />
                     </View>
                     <View style={style.TextContainer}>
@@ -32,7 +30,6 @@ export default class Home extends React.Component {
         )
     }
 }
-// const BAR_HEIGHT = StatusBar.currentHeight;
 
 const style = StyleSheet.create({
     mainContainer: {
