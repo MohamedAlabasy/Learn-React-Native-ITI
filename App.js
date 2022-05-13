@@ -5,6 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from './Screens/Splash';
 import Home from './Screens/Home';
+import SingleNews from './Screens/SingleNews';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -21,6 +23,7 @@ function App() {
         <Stack.Screen options={{ headerShown: false, }} name="Splash" component={Splash} />
         {/* To hide back in home  && mack it center*/}
         <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="Home" component={Home} />
+        <Stack.Screen options={{ headerTitleAlign: 'center' }} name="SingleNews" component={SingleNews} />
       </Stack.Navigator>
     </NavigationContainer>
   );
