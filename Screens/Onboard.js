@@ -1,7 +1,7 @@
 import React from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
 import { StyleSheet, Image } from 'react-native'
-import AppStatusBar from '../Components/AppStatusBar ';
+import AppStatusBarComponents from '../Components/AppStatusBarComponents';
 
 export default class Onboard extends React.Component {
     state = {

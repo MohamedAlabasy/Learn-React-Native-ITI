@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, View, Text, StyleSheet, Image } from 'react-native'
-import AppStatusBar from '../Components/AppStatusBar ';
+import AppStatusBarComponents from '../Components/AppStatusBarComponents';
 
 export default class SingleNews extends React.Component {
     state = {
@@ -9,7 +9,7 @@ export default class SingleNews extends React.Component {
     render() {
         return (
             <ScrollView>
-                <AppStatusBar />
+                <AppStatusBarComponents />
                 <View View style={style.mainContainer} >
                     <Image
                         style={style.image}

@@ -6,13 +6,12 @@ export default class SingUp extends React.Component {
         return (
             <View style={style.container}>
                 <Text>
-                    SingUp
+                    Login
                 </Text>
             </View>
         )
     }
 }
-
 
 const style = StyleSheet.create({
     container: {
