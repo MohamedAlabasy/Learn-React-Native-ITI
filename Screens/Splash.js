@@ -18,7 +18,7 @@ export default class Splash extends React.Component {
                     style={style.splashIcon}
                     source={require('../assets/splash.png')}
                 />
-                <ActivityIndicator size="large" color="#0000ff" />
+                <ActivityIndicator size="large" color="#fff" style={{ marginTop: 30 }} />
                 {this.goToHomeScreen()}
             </View>
         )
@@ -31,7 +31,7 @@ const style = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#fff'
+        backgroundColor: '#4a5cD0'
     },
     splashIcon: {
         width: 250,
