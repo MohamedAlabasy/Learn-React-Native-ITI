@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from './Screens/Splash';
 import Home from './Screens/Home';
 import SingleNews from './Screens/SingleNews';
+import Onboard from './Screens/Onboard';
 
 
 
@@ -21,6 +22,8 @@ function App() {
       >
         {/* To hide Header from splash only */}
         <Stack.Screen options={{ headerShown: false, }} name="Splash" component={Splash} />
+        <Stack.Screen options={{ headerShown: false, }} name="Onboard" component={Onboard} />
+
         {/* To hide back in home  && mack it center*/}
         <Stack.Screen options={{ headerBackVisible: false, headerTitleAlign: 'center' }} name="Home" component={Home} />
         <Stack.Screen options={{ headerTitleAlign: 'center' }} name="SingleNews" component={SingleNews} />
